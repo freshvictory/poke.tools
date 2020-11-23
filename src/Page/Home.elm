@@ -1,12 +1,9 @@
 module Page.Home exposing (Model, Msg, init, update, view)
 
+import Css exposing (center, hex, pct, px, rem, vh, vw)
 import Html.Styled as H exposing (Html)
-import Page
 import Html.Styled.Attributes as A exposing (css)
-import Css exposing (px, rem, hex, pct)
-import Css exposing (vw)
-import Css exposing (vh)
-import Css exposing (center)
+import Page
 
 
 
@@ -57,6 +54,7 @@ viewHeader =
     H.header
         [ css
             [ Css.margin (rem 1)
+
             -- , Css.marginBottom Css.zero
             ]
         ]
@@ -67,16 +65,17 @@ viewHeader =
             [ css
                 [ Css.fontWeight Css.normal
                 , Css.padding (rem 0.5)
+
                 -- , Css.border3 (px 2) Css.solid (hex "#eee")
                 , Css.backgroundColor (hex "#222")
+
                 -- , Css.borderBottom Css.zero
                 , Css.borderRadius (rem 0.5)
                 , Css.display Css.inlineBlock
                 , Css.fontSize (rem 1)
                 ]
             ]
-            [
-                H.text "poké.tools"
+            [ H.text "poké.tools"
             ]
         ]
 
@@ -86,6 +85,7 @@ viewContent =
     H.div
         [ css
             [ Css.margin (rem 1)
+
             -- , Css.marginTop Css.zero
             ]
         ]
@@ -101,19 +101,20 @@ toolGrid =
             , Css.property "grid-template-columns" "calc(50vw - 1.5rem) calc(50vw - 1.5rem)"
             , Css.property "grid-auto-rows" "calc(50vh - 1.5rem)"
             , Css.property "gap" "1rem"
+
             -- , Css.border3 (px 2) Css.solid (hex "#eee")
             -- , Css.padding (rem 1)
             , Css.justifyContent Css.center
             ]
         ]
         (List.map
-            (\(link, label) ->
-              H.li
-                []
-                [ toolLink link label ]
+            (\( link, label ) ->
+                H.li
+                    []
+                    [ toolLink link label ]
             )
-            [ ("/", "Type list")
-            , ("/dex", "Pokédex")
+            [ ( "/", "Type list" )
+            , ( "/dex", "Pokédex" )
             ]
         )
 
@@ -129,6 +130,7 @@ toolLink link label =
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
             , Css.borderRadius (rem 0.5)
+
             -- , Css.fontSize (rem 1)
             -- , Css.property "background" "repeating-linear-gradient(50deg, #222, #222 2px, black 2px, black 12px)"
             -- , Css.borderLeft2 (vw 3) Css.solid

@@ -4,8 +4,8 @@ import Browser
 import Browser.Navigation as Nav
 import Html.Styled exposing (Html, div, text, toUnstyled)
 import Page
-import Page.Home as Home
 import Page.Dex as Dex
+import Page.Home as Home
 import Url
 import Url.Parser as Parser
     exposing

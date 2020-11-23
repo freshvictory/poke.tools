@@ -1,13 +1,13 @@
 module Page.Dex exposing (Model, Msg, init, update, view)
 
 import Api exposing (Pokemon, Type, test, typeString)
-import Css exposing (deg, hex, int, pct, px, rem, vh, vw, num)
+import Css exposing (deg, hex, int, num, pct, px, rem, vh, vw)
+import Css.Global exposing (media)
 import Css.Media as Media
 import Dict exposing (Dict)
 import Html.Styled as H exposing (Html)
 import Html.Styled.Attributes as A exposing (css)
 import Page
-import Css.Global exposing (media)
 
 
 
@@ -139,6 +139,7 @@ viewEntry model pokemon =
                 , Css.borderRadius (pct 50)
                 , Css.property "background" "var(--c-background-medium)"
                 , Css.transform (Css.rotateZ (deg -30))
+
                 -- , Css.boxShadow4 (px 2) (px 2) (px 10) (hex "#000")
                 , Css.firstChild
                     [ Css.zIndex (int 1)
@@ -337,7 +338,7 @@ viewEvolutionChain model pokemon =
                 , Css.property "background-color" "var(--c-background-medium)"
                 , Css.property "box-shadow" "inset 1px 1px 5px #000, 1px 1px 5px #9d9d9d"
                 , Css.margin Css.auto
-                , Media.withMedia [ Media.only Media.screen [Media.maxWidth (px 400)] ]
+                , Media.withMedia [ Media.only Media.screen [ Media.maxWidth (px 400) ] ]
                     [ Css.width (px 70)
                     , Css.height (px 70)
                     , Css.padding (px 5)
